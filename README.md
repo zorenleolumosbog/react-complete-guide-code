@@ -1,45 +1,75 @@
-# Course Code & Materials
+# [React](https://reactjs.org/) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/main/LICENSE) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![CircleCI Status](https://circleci.com/gh/facebook/react.svg?style=shield)](https://circleci.com/gh/facebook/react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://reactjs.org/docs/how-to-contribute.html#your-first-pull-request)
 
-This repository contains the course source code and other extra materials like slides.
+React is a JavaScript library for building user interfaces.
 
-## How to use
+* **Declarative:** React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes. Declarative views make your code more predictable, simpler to understand, and easier to debug.
+* **Component-Based:** Build encapsulated components that manage their own state, then compose them to make complex UIs. Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep the state out of the DOM.
+* **Learn Once, Write Anywhere:** We don't make assumptions about the rest of your technology stack, so you can develop new features in React without rewriting existing code. React can also render on the server using Node and power mobile apps using [React Native](https://reactnative.dev/).
 
-The code snapshots are organized in multiple **branches** where every branch **represents a course section**.
+[Learn how to use React in your project](https://reactjs.org/docs/getting-started.html).
 
-You can switch branches via the branch dropdown above the directory explorer.
+## Installation
 
-![Click on the branch dropdown and then select the appropriate branch for the course section you're looking for](./selecting-a-branch.jpg)
+React has been designed for gradual adoption from the start, and **you can use as little or as much React as you need**:
 
-In most branches, you'll find multiple folders which organize the section-specific content further:
+* Use [Online Playgrounds](https://reactjs.org/docs/getting-started.html#online-playgrounds) to get a taste of React.
+* [Add React to a Website](https://reactjs.org/docs/add-react-to-a-website.html) as a `<script>` tag in one minute.
+* [Create a New React App](https://reactjs.org/docs/create-a-new-react-app.html) if you're looking for a powerful JavaScript toolchain.
 
-- Often, you'll find a `/code` subfolder which contains any relevent code snapshots for the given course section
-- You also often find `/slides` folders which - guess what - contain the slides for the module
-- `/extra-files` typically contains extra files like `.css` files that might be attached to individual lectures in that course module
+You can use React as a `<script>` tag from a [CDN](https://reactjs.org/docs/cdn-links.html), or as a `react` package on [npm](https://www.npmjs.com/package/react).
 
-The folder names should generally be self-explanatory but also feel free to simply click around and see which materials are available.
+## Documentation
 
-## Using code snapshots
+You can find the React documentation [on the website](https://react.dev/).  
 
-Code snapshots (which you find in `/code`) are there for you to compare your code to mine and find + fix errors you might have in your code.
+Check out the [Getting Started](https://reactjs.org/docs/getting-started.html) page for a quick overview.
 
-You can either view my code directly here on Github (you can open + view code files without issues here) or you download the snapshots.
+The documentation is divided into several sections:
 
-The subfolders in the `/code` folder are named such that mapping them to the course lectures is straightforward.
+* [Tutorial](https://reactjs.org/tutorial/tutorial.html)
+* [Main Concepts](https://reactjs.org/docs/hello-world.html)
+* [Advanced Guides](https://reactjs.org/docs/jsx-in-depth.html)
+* [API Reference](https://reactjs.org/docs/react-api.html)
+* [Where to Get Support](https://reactjs.org/community/support.html)
+* [Contributing Guide](https://reactjs.org/docs/how-to-contribute.html)
 
-### Downloading code snapshots
+You can improve it by sending pull requests to [this repository](https://github.com/reactjs/reactjs.org).
 
-You can download all the content of a branch via the "Code" button here on Github. You can then either [clone](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) the repository or simply download the selected branch content as a ZIP file.
+## Examples
 
-**Important:** You always download the **entire branch content!**
+We have several examples [on the website](https://reactjs.org/). Here is the first one to get you started:
 
-You can then dive into the interesting folders (e.g. the individual code snapshots) locally on your hard drive.
+```jsx
+import { createRoot } from 'react-dom/client';
 
-### Running the attached code
+function HelloMessage({ name }) {
+  return <div>Hello {name}</div>;
+}
 
-You can use the attached code simply to compare it to yours. But you can also run it.
+const root = createRoot(document.getElementById('container'));
+root.render(<HelloMessage name="Taylor" />);
+```
 
-To run my code, navigate into a specific code snapshot folder via the `cd` command in your command prompt or terminal first.
+This example will render "Hello Taylor" into a container on the page.
 
-Then run `npm install` to install all required dependencies (this will create a `/node_modules` folder).
+You'll notice that we used an HTML-like syntax; [we call it JSX](https://reactjs.org/docs/introducing-jsx.html). JSX is not required to use React, but it makes code more readable, and writing it feels like writing HTML. If you're using React as a `<script>` tag, read [this section](https://reactjs.org/docs/add-react-to-a-website.html#optional-try-react-with-jsx) on integrating JSX; otherwise, the [recommended JavaScript toolchains](https://reactjs.org/docs/create-a-new-react-app.html) handle it automatically.
 
-**Important:** If you're using the code for a module that requires API keys or a backend (e.g. the module about sending Http requests), you'll have to use **your backend URLs** or API keys. Mine won't work (I disabled my projects).
+## Contributing
+
+The main purpose of this repository is to continue evolving React core, making it faster and easier to use. Development of React happens in the open on GitHub, and we are grateful to the community for contributing bugfixes and improvements. Read below to learn how you can take part in improving React.
+
+### [Code of Conduct](https://code.fb.com/codeofconduct)
+
+Facebook has adopted a Code of Conduct that we expect project participants to adhere to. Please read [the full text](https://code.fb.com/codeofconduct) so that you can understand what actions will and will not be tolerated.
+
+### [Contributing Guide](https://reactjs.org/docs/how-to-contribute.html)
+
+Read our [contributing guide](https://reactjs.org/docs/how-to-contribute.html) to learn about our development process, how to propose bugfixes and improvements, and how to build and test your changes to React.
+
+### Good First Issues
+
+To help you get your feet wet and get you familiar with our contribution process, we have a list of [good first issues](https://github.com/facebook/react/labels/good%20first%20issue) that contain bugs that have a relatively limited scope. This is a great place to get started.
+
+### License
+
+React is [MIT licensed](./LICENSE).
